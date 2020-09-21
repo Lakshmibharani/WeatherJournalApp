@@ -1,8 +1,6 @@
-const { response } = require("express");
-
 /* Global Variables */
-let baseUrl = "https://api.openweathermap.org/data/2.5/weather?" ;
-let apiKey = "df0549cf0ad0836d97a7b79ad326caa8";
+let baseURL = "https://api.openweathermap.org/data/2.5/weather?" ;
+let apiKey = "9b789cfb2d097c3887b4d68d5c204ca2";
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
