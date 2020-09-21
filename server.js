@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Cors for cross origin allowance
-const Cors = require('cors');
+const cors = require('cors');
 app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
