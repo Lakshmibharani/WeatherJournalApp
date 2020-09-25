@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 
 // Cors for cross origin allowance
 const cors = require('cors');
+const { response } = require('express');
 app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
@@ -23,7 +24,7 @@ const port = 3000;
 const Server = app.listen(port, () => {
     console.log("Running on localhost: ${port}");
 });
-app.get('/projectData' , function(req, res){
+app.get('/all' , function(req, res){
     res.send(projectData);
 }) 
 app.post('/projectData' , function(req, res){
@@ -33,4 +34,5 @@ app.post('/projectData' , function(req, res){
         userResponse : req.body.userResponse
     };
     console.log(projectData);
+    response.send(projectData);
 });
