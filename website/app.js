@@ -31,19 +31,14 @@ const getWeatherData = async (baseURL, newZipcode, apikey) => {
         console.log("error", error);
     };
 };
-function newData(data) {
-    const newtemp = document.getElementById('temp');
-    const newdate = document.getElementById('date');
-    const newuserResponse = document.getElementsById('userResponse');
-
-    const serverData = getData("http://localhost:3000/projectData");
-    console.log("received" + serverData);
-    serverData.then(data => {
-        newtemp.innerText = data.temp;
-        newdate.innerText = data.date;
-        newuserResponse.innerText = data.userResponse;
-    });
-};
+const request = await fetch('/all');
+ try {
+ const allData = await request.json()
+ console.log(allData)
+ document.getElementById('temp').innerHTML = Math.round(allData.temp)+ 'degrees';
+ document.getElementById('content').innerHTML = allData.feel;
+ document.getElementById("date").innerHTML =allData.date;
+ }
 
 async function postData(url, data) {
     const reponse = await fetch (url, {
@@ -57,13 +52,13 @@ async function postData(url, data) {
     return await response.json();
 }
 
-const getData = async function(url) {
-    const response = await fetch(url)
+const request = await fetch('/all') 
+    const request = await fetch(url)
     try {
         const data = response.json();
         console.log(data);
         return data;
     } catch ( error) {
         console.log("error", error);
-    }
+    
 }
