@@ -34,5 +34,5 @@ app.post('/projectData' , function(req, res){
         userResponse : req.body.userResponse
     };
     console.log(projectData);
-    response.send(projectData);
+    res.send(projectData);
 });
