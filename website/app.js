@@ -52,7 +52,7 @@ const updateUI = async ( url = '') => {
 
 async function postData(url, data) {
     const reponse = await fetch (url, {
-        method : 'POST',
+        method : 'postData',
         credentials :'same-origin',
         headers : {
             'Content-Type' : 'application/json'
